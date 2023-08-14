@@ -1,0 +1,16 @@
+<div class="add-item-container">
+    <h4>Add an item</h4>
+    <form class="add-form" [formGroup]="createForm" (ngSubmit)="onItemCreate()">
+        <label for="title">Name</label>
+        <input type="text" formControlName="title" id="title" ngModel>
+        <label for="desc">Description</label>
+        <input type="text" formControlName="desc" id="desc" ngModel>
+        <label for="price">Price</label>
+        <input type="text" formControlName="price" id="price" ngModel>
+        <button type="submit">Create</button>
+    </form>
+
+    
+</div>
+
+

@@ -1,0 +1,28 @@
+<section class="header">
+    <div class="site-name">
+        <p>My Market Place</p>
+    </div>
+    <nav>
+        <ul class="top-nav-list">
+            <li class="top-nav-item">
+                <a routerLink="home" class="top-nav-link">Home</a>
+            </li>
+            <li class="top-nav-item">
+                <a routerLink="catalog" class="top-nav-link">Buy</a>
+            </li>
+            
+            <li class="top-nav-item">
+                <a routerLink="create" class="top-nav-link">Sell</a>
+            </li>
+            <li class="top-nav-item">
+                <a routerLink="login" class="top-nav-link">Login</a>
+            </li>
+            <li class="top-nav-item">
+                <a routerLink="register" class="top-nav-link">Register</a>
+            </li>
+            <li class="top-nav-item">
+                <button class="top-nav-link" (click)="userService.logout()">Logout</button>
+            </li>
+        </ul>
+    </nav>
+</section>

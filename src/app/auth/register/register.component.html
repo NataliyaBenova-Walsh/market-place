@@ -1,0 +1,25 @@
+<section class="register-page">
+    <div class="register-container">
+        <form [formGroup]="regForm" (ngSubmit)="onRegister()" class="register-form">
+            <div class="input-container">
+            <label for="firstName">Fisrt name:</label>
+            <input type="text" formControlName="firstName" id="firstName">
+        </div>
+        <div class="input-container">
+            <label for="lastName">Last name:</label>
+            <input type="text" formControlName="lastName" id="lastName">
+        </div>
+            <div class="input-container">
+            <label for="email">Email:</label>
+            <input type="email" formControlName="email" id="email">
+            
+        </div>
+        <div class="input-container">
+            <label for="password">Password:</label>
+            <input type="text" formControlName="password" id="password">
+        </div>
+            <button class="btn" type="submit">Register</button>
+            <p>Already have an account?<a class="regLink" routerLink="login">Login here</a></p>
+        </form>
+    </div>
+</section>
