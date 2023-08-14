@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
   
     this.userSvc.login(this.reactiveForm.value.email, this.reactiveForm.value.password)
     .then ((res)=> {
-      this.SetUserData(res.user);
+      //this.SetUserData(res.user);
       this.fireBaseAuth.authState.subscribe((user)=> {
         if(user) {
          
@@ -66,21 +66,5 @@ export class LoginComponent implements OnInit {
    
   }
 
-  SetUserData(user: any) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      `users/${user.uid}`
-    );
-    console.log(userRef);
-    const userData: IUser = {
-      uid: user.uid,
-      email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
-    
-    };
-    console.log(userData);
-    return userRef.set(userData, {
-      merge: true,
-    });
-  }
+  
 }

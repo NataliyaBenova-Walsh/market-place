@@ -10,19 +10,25 @@
             <li class="top-nav-item">
                 <a routerLink="catalog" class="top-nav-link">Buy</a>
             </li>
-            
-            <li class="top-nav-item">
-                <a routerLink="create" class="top-nav-link">Sell</a>
-            </li>
+            <div class="guest" *ngIf="!userService.isLoggedIn">
             <li class="top-nav-item">
                 <a routerLink="login" class="top-nav-link">Login</a>
             </li>
             <li class="top-nav-item">
                 <a routerLink="register" class="top-nav-link">Register</a>
             </li>
-            <li class="top-nav-item">
-                <button class="top-nav-link" (click)="userService.logout()">Logout</button>
-            </li>
+           
+            </div>
+                <div class="user" *ngIf="userService.isLoggedIn">
+                
+                
+                <li class="top-nav-item">
+                    <a routerLink="create" class="top-nav-link">Sell</a>
+                </li>
+            
+                <button id="logoutBtn" class="top-nav-link" (click)="userService.logout()">Logout</button>
+            </div>
+            
         </ul>
     </nav>
 </section>

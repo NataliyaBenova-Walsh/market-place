@@ -31,3 +31,15 @@ color: var(--clr-light-yellow);
 font-size: 14px;
 font-weight: bold;
 }
+
+.user, .guest {
+    display: flex;
+    
+}
+
+#logoutBtn {
+    background-color: var(--clr-purple);
+    border: none;
+    cursor: pointer;
+    margin-left: 24px;
+}

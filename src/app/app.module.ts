@@ -20,6 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ItemDetailsComponent } from './pages/item-details/item-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     HomeComponent,
     CatalogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,

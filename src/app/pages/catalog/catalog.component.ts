@@ -38,7 +38,7 @@ export class CatalogComponent implements OnInit {
       )
     ).subscribe(data => {
       this.items = data;
-      
+      console.log(data);
     });
   }
   

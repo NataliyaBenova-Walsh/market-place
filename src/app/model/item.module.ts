@@ -1,7 +1,8 @@
 export class IItem {
     title: string;
     desc: string;
-    price: number;
+    price: string;
     imgUrl?: string;
-    id?: string
+    id?: string;
+    ownerId?: string
 }
