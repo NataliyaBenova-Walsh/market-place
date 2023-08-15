@@ -1,9 +1,9 @@
 <div *ngIf="currentItem" class="edit-form">
     <h4>Details</h4>
-    <form>
+    <form #editItemForm="ngForm">
       <div class="form-group">
         <label for="title">Title</label>
-        <input
+        <input required
           type="text"
           class="form-control"
           id="title"
@@ -12,20 +12,17 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
-        <input
+        <label for="desc">Description</label>
+        <input required
         type="text"
         class="form-control"
-        id="description"
+        id="desc"
         [(ngModel)]="currentItem.desc"
         name="description"
       />
     </div>
 
-    <div class="form-group">
-      <label><strong>Status:</strong></label>
-      {{ currentTutorial.published ? "Published" : "Pending" }}
-    </div>
+    
   </form>
   <button class="badge badge-danger mr-2" (click)="deleteItem()">
     Delete
@@ -34,7 +31,7 @@
   <button type="submit" class="badge badge-success" (click)="updateItem()">
     Update
   </button>
-  <p>{{ message }}</p>
+  <p></p>
 </div>
 
 <div *ngIf="!currentItem">

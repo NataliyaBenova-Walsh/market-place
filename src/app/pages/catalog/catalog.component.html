@@ -5,6 +5,7 @@
         <div class="item-title">{{item.title}}</div>
         <div class="item-desc">{{item.desc}}</div>
         <div class="item-price">{{item.price}}</div>
+        <a [routerLink]="['catalog', item.id]">Details</a>
         
         <button class="btn" (click)="itemSvc.getOne(item.id)">Details</button>
     

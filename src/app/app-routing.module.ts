@@ -6,14 +6,17 @@ import { CreateComponent } from './pages/create/create.component';
 import { RegisterComponent } from "./auth/register/register.component"
 import { LoginComponent } from "./auth/login/login.component";
 import { AuthGuard } from './shared/guard/auth.guard';
+import { ItemDetailsComponent } from './pages/item-details/item-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-
+  {path: 'catalog/:id', component: ItemDetailsComponent},
   { path: 'catalog', component : CatalogComponent},
+  
   {path: 'create', component: CreateComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  
 ];
 
 @NgModule({
