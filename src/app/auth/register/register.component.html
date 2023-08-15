@@ -4,7 +4,7 @@
             <div class="input-container">
             <label for="firstName">Fisrt name:</label>
             <input [class.input-error]="regForm.controls['firstName'].invalid && regForm.controls['firstName'].touched" type="text" formControlName="firstName" id="firstName">
-            <ng-container *ngIf="regForm.controls['firstName'].touched && regForm.controls['firstName'].invalid" >
+            <ng-container *ngIf="shouldShowError('firstName')" >
 
                 <p class="error">A first name is required!</p>
             </ng-container>
@@ -12,7 +12,7 @@
         <div class="input-container">
             <label for="lastName">Last name:</label>
             <input [class.input-error]="regForm.controls['lastName'].invalid && regForm.controls['lastName'].touched" type="text" formControlName="lastName" id="lastName">
-            <ng-container *ngIf="regForm.controls['lastName'].touched && regForm.controls['lastName'].invalid" >
+            <ng-container *ngIf="shouldShowError('lastName')" >
 
                 <p class="error">A last name is required!</p>
             </ng-container>
@@ -20,7 +20,7 @@
             <div class="input-container">
             <label for="email">Email:</label>
             <input [class.input-error]="regForm.controls['email'].invalid && regForm.controls['email'].touched" type="email" formControlName="email" id="email">
-            <ng-container *ngIf="regForm.controls['email'].touched && regForm.controls['email'].invalid" >
+            <ng-container *ngIf="shouldShowError('email')" >
 
                 <p class="error">Valid email is required!</p>
             </ng-container>
@@ -32,7 +32,7 @@
         <div class="input-container">
             <label for="password">Password:</label>
             <input [class.input-error]="regForm.controls['password'].invalid && regForm.controls['password'].touched" type="password" style="-webkit-text-security: square;" formControlName="password" id="password">
-            <ng-container *ngIf="regForm.controls['password'].touched && regForm.controls['password'].invalid" >
+            <ng-container *ngIf="shouldShowError('password')" >
                 <p class="error">Valid password is required!</p>
             </ng-container>
         </div>
@@ -41,7 +41,7 @@
             <label for="rePassword">Repeat password:</label>
             <input [class.input-error]="regForm.controls['rePassword'].invalid && regForm.controls['rePassword'].touched" type="password" style="-webkit-text-security: square;" formControlName="rePassword" id="rePassword">
 
-            <ng-container *ngIf="regForm.controls['rePassword'].touched && regForm.controls['rePassword'].invalid" >
+            <ng-container *ngIf="shouldShowError('rePassword')" >
 
                 <p class="error">Please enter matching passwords!</p>
             </ng-container>

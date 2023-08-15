@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.fireBaseAuth.authState.subscribe((user) => {
       if(user) {
         console.log(user);
-        this.router.navigate(['catalog']);
+        this.router.navigate(['/home']);
         alert('Success!');
         this.regForm.reset();
       }
@@ -94,6 +94,10 @@ export class RegisterComponent implements OnInit {
     return userRef.set(userData, {
       merge: true,
     });
+  }
+
+  shouldShowError(controlName: string) {
+    return this.regForm.controls[controlName].touched && this.regForm.controls[controlName].invalid
   }
 
 }

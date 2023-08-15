@@ -4,6 +4,7 @@ import { map } from 'rxjs';
 import { IItem } from 'src/app/model/item.module';
 import { ItemService } from 'src/app/services/item.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class CreateComponent implements OnInit {
   submited = false;
   createForm : FormGroup;
 
-constructor(private itemSvc: ItemService) {}
+constructor(private itemSvc: ItemService, private router: Router) {}
 
 ngOnInit(): void {
   this.createForm = new FormGroup({
@@ -30,10 +31,15 @@ ngOnInit(): void {
 }
 
   onItemCreate() : void {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log(user['uid']);
+    
     const body: any = {
       title: this.createForm.value.title,
       desc: this.createForm.value.desc,
-      price: this.createForm.value.price
+      price: this.createForm.value.price,
+      owner: user['uid'],
    
 
     }
@@ -42,9 +48,10 @@ ngOnInit(): void {
     this.itemSvc.create(body).
     then(()=> {
       console.log('New item created successfully!');
-      console.log(this.item);
+     
       this.submited = true;
-      this.createForm.reset();
+
+      this.router.navigate(['/catalog']);
     });
 
    
