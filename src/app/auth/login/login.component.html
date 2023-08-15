@@ -1,12 +1,32 @@
 <section class="login-page">
     <div class="login-container">
         <form class="login-form"  [formGroup]="reactiveForm" (ngSubmit)="onLogin()">
+            <div class="input-container">
             <label for="email">Email:</label>
             <input type="text" formControlName="email" id="email">
+
+            <ng-container *ngIf="!fbError && reactiveForm.controls['email'].touched && reactiveForm.controls['email'].invalid" >
+
+                <p class="error">Valid email is required!</p>
+            </ng-container>
+            </div>
+
+            <div class="input-container">
             <label for="password">Password:</label>
-            <input formControlName="password"  type="text" name="password" id="password">
-            <button type="submit">Login</button>
-            <p>Not registered yet?<a routerLink="register">Sign up here</a></p>
+            <input formControlName="password"   id="password">
+            
+            <ng-container *ngIf="!fbError && reactiveForm.controls['password'].touched && reactiveForm.controls['password'].invalid" >
+
+                <p class="error">Valid password is required!</p>
+            </ng-container>
+
+            <ng-container *ngIf="fbError " >
+
+                <p class="error">Valid email and password are required!</p>
+            </ng-container>
+            </div>
+            <button [disabled]="reactiveForm.invalid" class="btn" type="submit">Login</button>
+            <p>Not registered yet?<a class="loginLink" routerLink="register">Sign up here</a></p>
         </form>
     </div>
 </section>

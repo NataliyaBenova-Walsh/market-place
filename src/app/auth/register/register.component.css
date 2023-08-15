@@ -39,3 +39,10 @@ input {
     font-weight: bold;
     margin-left: 16px;
 }
+
+.input-error {
+    border-left: 2px solid red;
+}
+.error {
+    color: #ee3338;
+}

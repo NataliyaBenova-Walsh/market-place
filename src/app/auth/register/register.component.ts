@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import {  FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/model/user.model';
 import { UserService } from 'src/app/services/user.service';
 import 'rxjs'
 import { AngularFirestore, AngularFirestoreDocument, } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { passwordMatch } from '../auth.module';
 
 
 @Component({
@@ -16,9 +17,11 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class RegisterComponent implements OnInit {
   userData: any;
   regForm: FormGroup;
+  fbError: boolean = false;
+  passwordControl = new FormControl(null, [Validators.required]);
 
   constructor(private userSvc: UserService, private router: Router,  private afs: AngularFirestore,
-    private fireBaseAuth: AngularFireAuth,
+    private fireBaseAuth: AngularFireAuth
     ) {
     this.fireBaseAuth.authState.subscribe((user)=> {
       if(user) {
@@ -39,9 +42,10 @@ export class RegisterComponent implements OnInit {
       firstName: new FormControl(null, Validators.required),
       lastName: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.email, Validators.required]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
-    })
-    
+      password: this.passwordControl,
+      rePassword: new FormControl(null, [passwordMatch(this.passwordControl)])
+    });
+    this.fbError = false;
   }
 
   onRegister() {
@@ -68,7 +72,8 @@ export class RegisterComponent implements OnInit {
       }
     });
    }, err => {
-    alert(err.message);
+    console.log(err.message);
+    this.fbError = true;
   } );
  
    

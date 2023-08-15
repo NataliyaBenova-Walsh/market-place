@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { IUser } from '../../model/user.model';
 import 'rxjs'
-import { AngularFirestore, AngularFirestoreDocument, } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 
 import { UserService } from 'src/app/services/user.service';
 
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   userData: any;
   reactiveForm: FormGroup;
+  fbError: boolean = false;
 
   constructor(public userSvc: UserService, private router: Router,  private afs: AngularFirestore,
     private fireBaseAuth: AngularFireAuth,) {
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
     });
+    this.fbError = false;
 
   }
 
@@ -52,14 +54,15 @@ export class LoginComponent implements OnInit {
       this.fireBaseAuth.authState.subscribe((user)=> {
         if(user) {
          
-      
           this.router.navigate(['/catalog']);
         }
       });
     
      }, err => {
-      alert(err.message);
-    
+      this.fbError = true;
+      console.log(err.message);
+      this.reactiveForm.reset();
+      
      });
 
   

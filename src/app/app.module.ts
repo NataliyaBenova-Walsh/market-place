@@ -12,7 +12,7 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CoreModule } from './core/core.module';
-import { AuthModule } from './auth/auth.module';
+
 
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -40,7 +40,7 @@ import { ItemDetailsComponent } from './pages/item-details/item-details.componen
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
-    AuthModule,
+  
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,

@@ -25,9 +25,7 @@ export class CatalogComponent implements OnInit {
      // console.log('from newService', this.items);
    // });
   }
-  onItemsGet() {
-  
-  }
+ 
 
   retrieveItems(): void {
     this.itemSvc.getAll().snapshotChanges().pipe(
@@ -38,9 +36,11 @@ export class CatalogComponent implements OnInit {
       )
     ).subscribe(data => {
       this.items = data;
-      console.log(data);
+      console.log(this.items);
     });
   }
+
+ 
   
  
 }

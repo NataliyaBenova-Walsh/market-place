@@ -1,14 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-  
-  ]
-})
-export class AuthModule { }
+export function passwordMatch(passwordFormControl: AbstractControl) {
+  return (rePassFormControl: AbstractControl) => {
+    if(passwordFormControl.value !== rePassFormControl.value) {
+      return {
+        passwordMatch: true
+      }
+    }
+    return null;
+  }
+}

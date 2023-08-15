@@ -37,7 +37,7 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-   return this.fireBaseAuth.signInWithEmailAndPassword(email, password)
+   return this.fireBaseAuth.signInWithEmailAndPassword(email, password);
 
   }
 

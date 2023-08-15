@@ -3,22 +3,50 @@
         <form [formGroup]="regForm" (ngSubmit)="onRegister()" class="register-form">
             <div class="input-container">
             <label for="firstName">Fisrt name:</label>
-            <input type="text" formControlName="firstName" id="firstName">
+            <input [class.input-error]="regForm.controls['firstName'].invalid && regForm.controls['firstName'].touched" type="text" formControlName="firstName" id="firstName">
+            <ng-container *ngIf="regForm.controls['firstName'].touched && regForm.controls['firstName'].invalid" >
+
+                <p class="error">A first name is required!</p>
+            </ng-container>
         </div>
         <div class="input-container">
             <label for="lastName">Last name:</label>
-            <input type="text" formControlName="lastName" id="lastName">
+            <input [class.input-error]="regForm.controls['lastName'].invalid && regForm.controls['lastName'].touched" type="text" formControlName="lastName" id="lastName">
+            <ng-container *ngIf="regForm.controls['lastName'].touched && regForm.controls['lastName'].invalid" >
+
+                <p class="error">A last name is required!</p>
+            </ng-container>
         </div>
             <div class="input-container">
             <label for="email">Email:</label>
-            <input type="email" formControlName="email" id="email">
-            
+            <input [class.input-error]="regForm.controls['email'].invalid && regForm.controls['email'].touched" type="email" formControlName="email" id="email">
+            <ng-container *ngIf="regForm.controls['email'].touched && regForm.controls['email'].invalid" >
+
+                <p class="error">Valid email is required!</p>
+            </ng-container>
+            <ng-container *ngIf="fbError" >
+
+                <p class="error">The email is alredy in use!</p>
+            </ng-container>
         </div>
         <div class="input-container">
             <label for="password">Password:</label>
-            <input type="text" formControlName="password" id="password">
+            <input [class.input-error]="regForm.controls['password'].invalid && regForm.controls['password'].touched" type="password" style="-webkit-text-security: square;" formControlName="password" id="password">
+            <ng-container *ngIf="regForm.controls['password'].touched && regForm.controls['password'].invalid" >
+                <p class="error">Valid password is required!</p>
+            </ng-container>
         </div>
-            <button class="btn" type="submit">Register</button>
+
+        <div class="input-container">
+            <label for="rePassword">Repeat password:</label>
+            <input [class.input-error]="regForm.controls['rePassword'].invalid && regForm.controls['rePassword'].touched" type="password" style="-webkit-text-security: square;" formControlName="rePassword" id="rePassword">
+
+            <ng-container *ngIf="regForm.controls['rePassword'].touched && regForm.controls['rePassword'].invalid" >
+
+                <p class="error">Please enter matching passwords!</p>
+            </ng-container>
+        </div>
+            <button [disabled]="regForm.invalid" class="btn" type="submit">Register</button>
             <p>Already have an account?<a class="regLink" routerLink="login">Login here</a></p>
         </form>
     </div>
