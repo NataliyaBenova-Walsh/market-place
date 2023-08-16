@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ItemDetailsComponent } from './pages/item-details/item-details.componen
     CatalogComponent,
     LoginComponent,
     RegisterComponent,
-    ItemDetailsComponent
+    ItemDetailsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,43 @@
 <div class="add-item-container">
-    <h4>Add an item</h4>
+    <h4>Add an item for sale:</h4>
     <form class="add-form" [formGroup]="createForm" (ngSubmit)="onItemCreate()">
-        <label for="title">Name</label>
-        <input type="text" formControlName="title" id="title" ngModel>
+    
+         <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" formControlName="title" id="title" ngModel required [class.input-error]='createForm.controls.title.invalid && createForm.controls.title.touched'> 
+    </div>
+      <ng-container *ngIf="shouldShowError('title')" >
+            <p>Please enter an item title</p>
+      </ng-container>
+         <div class="form-group">
+        <label for="imgUrl">Image URL:</label>
+        <input type="text" formControlName="imgUrl" id="imgUrl" ngModel required [class.input-error]='createForm.controls.imgUrl.invalid && createForm.controls.imgUrl.touched'>
+    </div>
+    <ng-container *ngIf="shouldShowError('imgUrl')" >
+        <p>Please enter an item image URL</p>
+  </ng-container>
+    
+ <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" formControlName="price" id="price" ngModel required [class.input-error]='createForm.controls.price.invalid && createForm.controls.price.touched'>
+    </div>
+        
+    <ng-container *ngIf="shouldShowError('price')" >
+        <p>Please enter an item price</p>
+  </ng-container>
+ <div class="form-group">
         <label for="desc">Description</label>
-        <input type="text" formControlName="desc" id="desc" ngModel>
-        <label for="price">Price</label>
-        <input type="text" formControlName="price" id="price" ngModel>
-        <button type="submit">Create</button>
+       
+        <textarea ngModel required [class.input-error]='createForm.controls.desc.invalid && createForm.controls.desc.touched' formControlName="desc" name="desc" id="desc" cols="30" rows="5"></textarea>
+    </div>
+    <ng-container *ngIf="shouldShowError('desc')" >
+        <p>Please enter an item description</p>
+  </ng-container>    
+      
+        <button [disabled]="createForm.invalid" class="btn" type="submit">Create</button>
     </form>
 
-    
+   
 </div>
 
 

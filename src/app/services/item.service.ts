@@ -10,6 +10,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
   providedIn: 'root'
 })
 export class ItemService {
+  currentItem: IItem;
   private dbPath = '/items';
 
   itemsRef: AngularFirestoreCollection<IItem>;
@@ -19,26 +20,16 @@ export class ItemService {
   }
 
   getAll(): AngularFirestoreCollection<IItem> {
-    console.log(this.itemsRef);
+    
     return this.itemsRef;
   }
 getOne(id: any) {
-  //const itemRef: AngularFirestoreDocument<any> = this.afs.doc(
-   // `items/${id}`
-  //);
+
   return this.itemsRef
   .doc(id)
   .valueChanges()
-  .subscribe(item => {
-    const itemDetails = {...item, id: id};
-    console.log(itemDetails);
-    return itemDetails;
+ ;
 
-    // If you prefer including itemId back to object
-    // return {...item, id: docId}
-  });
-  //console.log(itemRef);
-  //return itemRef;
 
 }
   

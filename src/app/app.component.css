@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+:root {
+    --clr-yellow: #fbcd43;
+    --clr-light-yellow: #f5e0a1;
+    --clr-purple: #3f4096;
+    --clr-light-purple: #70719d;
+    --clr-red: #ee3338;
+    --clr-dark: #1e1f3d;
+
+}
+body {
+    margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
+    color: var(--clr-dark);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.btn {
+    cursor: pointer;
+}

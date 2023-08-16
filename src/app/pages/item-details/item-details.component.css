@@ -1,0 +1,105 @@
+.item-details {
+    width: 90%;
+    margin: 24px auto;
+}
+
+.item-details-container {
+    border: 2px solid var(--clr-dark);
+    width: 60%;
+    margin: 36px auto;
+    padding: 12px;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+.item-img {
+    width: 250px;
+    margin-left: 18px;
+}
+.item-info {
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-details-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.delBtn {
+    background-color: var(--clr-red);
+    border: none;
+    cursor: pointer;
+}
+.editBtn {
+    background-color: var(--clr-light-yellow);
+    border: none;
+    cursor: pointer;
+}
+.backLink {
+    margin: 24px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.item-field {
+    color: var(--clr-purple);
+    font-size: 14px;
+    font-weight: bold;
+   margin-bottom: 8px;
+    display: block;
+    padding-top: 0;
+    
+}
+.item-label {
+    font-size: 12px;
+    color: var(--clr-dark);
+}
+.item-details-btns {
+    margin-left: 24px;
+}
+.container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+}
+
+.add-item-container {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.edit-form {
+    margin: 36px auto;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--clr-yellow);
+    padding: 24px;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    color: var(--clr-dark);
+}
+input, textarea {
+    margin-bottom: 12px;
+    padding: 8px;
+}
+label {
+    margin-bottom: 4px;
+}
+.input-error {
+    border-left: 2px solid red;
+}
+
+p {
+    margin-top: 0;
+    color: red;
+}

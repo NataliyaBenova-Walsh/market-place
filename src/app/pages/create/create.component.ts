@@ -25,7 +25,7 @@ ngOnInit(): void {
     title: new FormControl(null, Validators.required),
     desc: new FormControl(null, Validators.required),
     price: new FormControl(null, [Validators.required]),
-    //imgUrl: new FormControl(null),
+    imgUrl: new FormControl(null),
     //id: new FormControl(null),
   });
 }
@@ -37,8 +37,9 @@ ngOnInit(): void {
     
     const body: any = {
       title: this.createForm.value.title,
-      desc: this.createForm.value.desc,
       price: this.createForm.value.price,
+      imgUrl: this.createForm.value.imgUrl,
+      desc: this.createForm.value.desc,
       owner: user['uid'],
    
 
@@ -64,6 +65,10 @@ ngOnInit(): void {
   newItem(): void {
     this.submited = false;
     this.item = new IItem();
+  }
+
+  shouldShowError(controlName: string) {
+    return this.createForm.controls[controlName].touched && this.createForm.controls[controlName].invalid
   }
 
 }

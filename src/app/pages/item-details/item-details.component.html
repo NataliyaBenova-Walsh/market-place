@@ -1,40 +1,90 @@
-<div *ngIf="currentItem" class="edit-form">
+<section class="item-details">
+
+  <a class="backLink" routerLink="..">Back </a>
+
+  <div *ngIf="!inEditMode" class="item-details-container">
+
+    <div class="item-img">
+      <img src="{{currentItem.imgUrl}}" height="250px">
+    </div>
+<div class="container-right">
+    <div class="item-info">
+      <div class="item-title">
+        <div class="item-label">Title: <span class="item-field"> {{currentItem.title}}</span></div>
+      </div>
+      <div class="item-price">
+        <div class="item-label">Price: <span class="item-field"> {{currentItem.price}}</span></div>
+      </div>
+      <div class="item-desc">
+        <div class="item-label">Description: <span class="item-field">{{currentItem.desc}}</span></div>
+      </div>
+    </div>
+    <div class="item-details-btns">
+      <ng-container *ngIf="isOwner">
+       
+        <button class="btn editBtn" (click)="onEdit()" >
+          Edit
+        </button>
+        <button class="btn delBtn" (click)="onDeleteItem()">
+          Delete
+        </button>
+      
+        
+  
+      </ng-container>
+      <ng-container *ngIf="!isOwner">
+        <button class="btn buyBtn" type="submit">
+          Contact the seller
+        </button>
+      </ng-container>
+  
+    </div>
+  </div>
+  </div>
+
+
+</section>
+
+  <div class="edit-form" *ngIf="inEditMode">
     <h4>Details</h4>
     <form #editItemForm="ngForm">
       <div class="form-group">
-        <label for="title">Title</label>
-        <input required
-          type="text"
-          class="form-control"
-          id="title"
-          [(ngModel)]="currentItem.title"
-          name="title"
-        />
+        <label for="title">Title:</label>
+        <input ngModel required type="text" class="form-control" id="title" name="title"/>
       </div>
       <div class="form-group">
-        <label for="desc">Description</label>
-        <input required
-        type="text"
-        class="form-control"
-        id="desc"
-        [(ngModel)]="currentItem.desc"
-        name="description"
-      />
+        <label for="imgUrl">Image URL:</label>
+        <input ngModel required type="text" class="form-control" id="imgUrl" name="imgUrl"/>
     </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input ngModel required type="text" class="form-control" id="price" name="price"/>
+    </div>
+      <div class="form-group">
+        <label for="desc">Description:</label>
+        <input ngModel required  class="form-control" id="desc" name="desc"/>
+    </div>
+
+    <button type="submit" class="btn editBtn" (click)="onUpdateItem()">
+      Update
+    </button>
+    <button (click)="onCancel()" class="btn delBtn">Cancel</button>
 
     
   </form>
-  <button class="badge badge-danger mr-2" (click)="deleteItem()">
-    Delete
-  </button>
 
-  <button type="submit" class="badge badge-success" (click)="updateItem()">
-    Update
-  </button>
-  <p></p>
+
+  
+  
 </div>
 
 <div *ngIf="!currentItem">
   <br />
-  <p>Cannot access this Tutorial...</p>
+  <p>Cannot access this Item...</p>
 </div>
+
+
+
+
+
+

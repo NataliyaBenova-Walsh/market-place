@@ -1,4 +1,35 @@
+h3 {
+    text-align: center;
+}
+.catalog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 36px auto;
+   
+}
+.item-img {
+    height: 250px;
+
+}
+
 .item-container {
-    margin: 12px;
-    border: 1px solid red;
+    margin: 16px;
+    width: 250px;
+    border: 2px solid var(--clr-light-purple);
+    padding: 24px;
+}
+
+.btn {
+    cursor: pointer;
+}
+span {
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.item-title-span {
+    font-size: 18px;
 }

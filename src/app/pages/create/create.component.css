@@ -1,0 +1,35 @@
+.add-item-container {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.add-form {
+    margin: 36px auto;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--clr-yellow);
+    padding: 24px;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    color: var(--clr-dark);
+}
+input, textarea {
+    margin-bottom: 12px;
+    padding: 8px;
+}
+label {
+    margin-bottom: 4px;
+}
+.input-error {
+    border-left: 2px solid red;
+}
+
+p {
+    margin-top: 0;
+    color: red;
+}
