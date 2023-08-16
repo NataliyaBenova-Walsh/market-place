@@ -13,7 +13,7 @@
 
             <div class="input-container">
             <label for="password">Password:</label>
-            <input formControlName="password"   id="password">
+            <input formControlName="password"  type="password" id="password">
             
             <ng-container *ngIf="!fbError && reactiveForm.controls['password'].touched && reactiveForm.controls['password'].invalid" >
 
@@ -25,7 +25,7 @@
                 <p class="error">Valid email and password are required!</p>
             </ng-container>
             </div>
-            <button [disabled]="reactiveForm.invalid" class="btn" type="submit">Login</button>
+            <button [disabled]="reactiveForm.invalid" class="btn loginBtn" type="submit">Login</button>
             <p>Not registered yet?<a class="loginLink" routerLink="/register">Sign up here</a></p>
         </form>
     </div>

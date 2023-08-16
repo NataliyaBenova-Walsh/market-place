@@ -25,12 +25,17 @@ export class ItemService {
   }
 getOne(id: any) {
 
-  return this.itemsRef
-  .doc(id)
-  .valueChanges()
- ;
+  return this.itemsRef.doc(id).valueChanges();
+}
 
-
+getSearch() {
+  this.afs
+      .collection("items", ref => ref.where("title", '==', 'chair'))
+      .valueChanges().subscribe(data => {
+        
+        console.log(data);
+      });;
+  
 }
   
   create(item: IItem): any {

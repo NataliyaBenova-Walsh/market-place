@@ -15,7 +15,7 @@
     background-color: var(--clr-light-yellow);
    
     color: var(--clr-dark);
-    width: 50%;
+    width: 300px;
     margin: 24px auto;
     border-radius: 4px;
    
@@ -45,4 +45,7 @@ input {
 }
 .error {
     color: #ee3338;
+}
+.regBtn {
+    width: 100%;
 }

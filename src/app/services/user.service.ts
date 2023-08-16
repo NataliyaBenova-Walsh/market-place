@@ -5,17 +5,20 @@ import { IUser } from '../model/user.model';
 import * as auth from 'firebase/auth';
 
 import 'rxjs'
-import { AngularFirestore, AngularFirestoreDocument, } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   userData: any;
+  usersRef: AngularFirestoreCollection<IUser>;
+
   constructor(
     private afs: AngularFirestore,
     private fireBaseAuth: AngularFireAuth,
-    private router: Router) {
+    private router: Router,
+    ) {
       this.fireBaseAuth.authState.subscribe((user)=> {
         if(user) {
           this.userData = user;
@@ -27,6 +30,8 @@ export class UserService {
           JSON.parse(localStorage.getItem('user')!);
         }
       });
+
+      this.usersRef = afs.collection('/users')
     }
 
 
@@ -59,5 +64,13 @@ export class UserService {
      });
   }
 
- 
+  getUser(id: any) {
+
+    return this.usersRef
+    .doc(id)
+    .valueChanges()
+   ;
+  
+  
+  }
 }

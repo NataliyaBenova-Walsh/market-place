@@ -8,9 +8,10 @@
     background-color: var(--clr-light-yellow);
    
     color: var(--clr-dark);
-    width: 50%;
+    width: 300px;
     margin: 24px auto;
     border-radius: 4px;
+
    
 }
 .input-container {
@@ -32,3 +33,8 @@ input {
     font-weight: bold;
     margin-left: 16px;
 }
+
+.loginBtn {
+    width: 100%;
+}
+

@@ -33,9 +33,8 @@
   
       </ng-container>
       <ng-container *ngIf="!isOwner">
-        <button class="btn buyBtn" type="submit">
-          Contact the seller
-        </button>
+        <button *ngIf="!isOwnerEmail" class="btn buyBtn" type="submit" (click)="onBuy()">Owner contact</button>
+      <ng-container *ngIf="isOwnerEmail"><a href="">{{currentItem.ownerEmail}}</a></ng-container>
       </ng-container>
   
     </div>

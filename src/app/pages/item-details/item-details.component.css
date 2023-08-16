@@ -5,7 +5,7 @@
 
 .item-details-container {
     border: 2px solid var(--clr-dark);
-    width: 60%;
+    width: 400px;
     margin: 36px auto;
     padding: 12px;
     display: flex;
@@ -27,6 +27,7 @@
     gap: 12px;
     flex-wrap: wrap;
     flex-direction: column;
+    margin-bottom: 12px;
 }
 .delBtn {
     background-color: var(--clr-red);

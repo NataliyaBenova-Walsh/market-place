@@ -1,8 +1,9 @@
 import {  HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { IItem } from 'src/app/model/item.module';
 import { ItemService } from 'src/app/services/item.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-catalog',
@@ -10,20 +11,18 @@ import { ItemService } from 'src/app/services/item.service';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
-
+  @ViewChild('searchItemForm') searchItemForm: NgForm;
   items?: IItem[];
+  isFilter: boolean = false;
 
-  constructor(private http: HttpClient, private itemSvc: ItemService) {
+  constructor(private http: HttpClient, public itemSvc: ItemService) {
 
   }
   ngOnInit(): void {
     this.retrieveItems()
-    
-    //this.itemSvc.get()
-    //.subscribe(items => {
-     // this.items = items;
-     // console.log('from newService', this.items);
-   // });
+    this.isFilter= false;
+    console.log(this.searchItemForm.value);
+  
   }
  
 
@@ -40,8 +39,19 @@ export class CatalogComponent implements OnInit {
     });
   }
 
- 
-  
+  onSearch(): void {
+    const filteredItems = [];
+    const searchF = this.searchItemForm.value.search;
+    console.log(searchF);
+        this.items.forEach(item => {
+          const title = item.title
+        if(title.includes(searchF)) {
+          filteredItems.push(item);
+        }
+   
+      });
+      console.log(filteredItems);
+  }
  
 }
 

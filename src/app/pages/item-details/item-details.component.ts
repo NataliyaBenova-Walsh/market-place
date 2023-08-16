@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { IItem } from 'src/app/model/item.module';
 import { ItemService } from 'src/app/services/item.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -17,14 +18,16 @@ export class ItemDetailsComponent implements OnInit {
     
    isOwner: boolean = false;
    inEditMode: boolean = false;
+   isOwnerEmail: boolean = false;
 
-    constructor(private itemSvc: ItemService, private route: ActivatedRoute, private router: Router) {}
+    constructor(private itemSvc: ItemService, private userSvc: UserService, private route: ActivatedRoute, private router: Router) {}
 
     ngOnInit(): void {
 
       this.route.params.subscribe((params: Params) => {
         const id = params['id'];
         console.log('Item id', id);
+
       const data = this.itemSvc.getOne(id)
       .subscribe(item => {
         const itemDetails = {...item, id: id};
@@ -36,11 +39,8 @@ export class ItemDetailsComponent implements OnInit {
     });
     const user = JSON.parse(localStorage.getItem('user'));
     console.log('UserID: ',user.uid);
-    
 
       })
-
-      
     }
 
    onEdit(): void {
@@ -58,6 +58,11 @@ export class ItemDetailsComponent implements OnInit {
 
    onCancel(): void {
     this.inEditMode = false;
+   }
+
+   onBuy(): void {
+    this.isOwnerEmail = true;
+
    }
 
     onUpdateItem(): void {

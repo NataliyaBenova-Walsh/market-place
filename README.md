@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
+The project consists of Home, Login, Register and Catalog pages visible for all users. For Edit and Delete the user needs to be logged in. The logged in users can create, edit and delete their own adds and can get the seller information of the adds that are not created by them.
+
+#Back end
+
+Firebase used for backend and deployment
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

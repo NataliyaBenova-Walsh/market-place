@@ -4,5 +4,6 @@ export class IItem {
     price: string;
     imgUrl?: string;
     id?: string;
-    owner?: string
+    owner?: string;
+    ownerEmail?: string
 }
