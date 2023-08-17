@@ -14,6 +14,7 @@ export class UserService {
   userData: any;
   usersRef: AngularFirestoreCollection<IUser>;
 
+
   constructor(
     private afs: AngularFirestore,
     private fireBaseAuth: AngularFireAuth,
@@ -52,7 +53,10 @@ export class UserService {
 
   }
   
-
+getCurrentUser(id) {
+  return this.usersRef.doc(id).valueChanges();
+  
+}
 
   
     logout() {

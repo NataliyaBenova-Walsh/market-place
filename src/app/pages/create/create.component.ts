@@ -7,6 +7,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -21,6 +22,7 @@ export class CreateComponent implements OnInit {
 constructor(private itemSvc: ItemService, private router: Router) {}
 
 ngOnInit(): void {
+  
   this.createForm = new FormGroup({
     title: new FormControl(null, Validators.required),
     desc: new FormControl(null, Validators.required),
@@ -28,6 +30,7 @@ ngOnInit(): void {
     imgUrl: new FormControl(null),
     category: new FormControl(null, Validators.required)
   });
+
 }
 
   onItemCreate() : void {

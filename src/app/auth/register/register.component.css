@@ -66,10 +66,12 @@ input:-webkit-autofill {
 .check-container {
     position: relative;
     right: 0;
+    height: 0;
+    margin: 0;
 }
  fa-icon {
     position: relative;
-    top: -54px;
+    top: -40px;
     left: 280px;
     color: green;
      font-size: 12px;

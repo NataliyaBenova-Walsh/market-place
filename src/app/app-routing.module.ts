@@ -7,14 +7,16 @@ import { RegisterComponent } from "./auth/register/register.component"
 import { LoginComponent } from "./auth/login/login.component";
 import { AuthGuard } from './shared/guard/auth.guard';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
-import { EditComponent } from './pages/edit/edit.component';
+import { ProfileComponent } from './auth/profile/profile.component';
+
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   
   { path: 'catalog', component : CatalogComponent},
   {path: 'catalog/:id', component: ItemDetailsComponent},
-  {path: 'catalog/:id/edit', component: EditComponent},
+ {path: 'profile', component: ProfileComponent},
   {path: 'create', component: CreateComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},

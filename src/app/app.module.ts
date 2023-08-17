@@ -21,7 +21,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
-import { EditComponent } from './pages/edit/edit.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -34,7 +34,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LoginComponent,
     RegisterComponent,
     ItemDetailsComponent,
-    EditComponent
+  
   ],
   imports: [
     BrowserModule,
