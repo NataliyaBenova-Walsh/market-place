@@ -5,8 +5,8 @@
 
 .login-container {
     padding: 24px;
-    background-color: var(--clr-light-yellow);
-   
+
+    border: 2px solid var(--clr-purple);
     color: var(--clr-dark);
     width: 300px;
     margin: 24px auto;
@@ -24,17 +24,44 @@ input {
     margin-bottom: 12px;
     border: none;
     border-bottom: 1px solid var(--clr-dark);
-    padding: 12px;
+    padding: 12px 12px 12px 18px;
+}
+input:-webkit-autofill { 
+    -webkit-background-clip: text;
 }
 .loginLink {
-    direction: none;
+   
     color: var(--clr-purple);
     font-size: 14px;
     font-weight: bold;
     margin-left: 16px;
 }
+.loginLink:hover {
+    text-decoration: underline;
+}
 
 .loginBtn {
     width: 100%;
+    border: 2px solid var(--clr-purple);
+        background-color: var(--clr-purple);
+        color: #f5e0a1;
 }
 
+.input-error {
+    border-left: 2px solid red;
+}
+.error {
+    color: #ee3338;
+}
+.check-container {
+    position: relative;
+    right: 0;
+}
+ fa-icon {
+    position: relative;
+    top: -40px;
+    left: 280px;
+    color: green;
+     font-size: 12px;
+
+}

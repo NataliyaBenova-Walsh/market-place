@@ -27,5 +27,8 @@ a {
     text-decoration: none;
 }
 .btn {
+    border: 2px solid var(--clr-purple);
+    background-color: var(--clr-purple);
+    color: #f5e0a1;
     cursor: pointer;
 }

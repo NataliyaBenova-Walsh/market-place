@@ -68,9 +68,6 @@ export class UserService {
 
     return this.usersRef
     .doc(id)
-    .valueChanges()
-   ;
-  
-  
+    .valueChanges();
   }
 }

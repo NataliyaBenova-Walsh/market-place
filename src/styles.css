@@ -28,13 +28,10 @@ a {
 }
 
 .btn {
-    background-color: var(--clr-light-purple);
-    border: 2px solid var(--clr-light-purple);
+        
+        cursor: pointer;
     padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-}
-.btn:hover {
-   font-size: 16px;
+    border-radius: 2px;
 }

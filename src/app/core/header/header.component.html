@@ -26,9 +26,11 @@
                     <a routerLink="create" class="top-nav-link">Sell</a>
                 </li>
             
-                <button id="logoutBtn" class="top-nav-link" (click)="userService.logout()">Logout</button>
+                <button id="logoutBtn" class="top-nav-link" (click)="userService.logout()">Logout   <fa-icon [icon]="['fas', 'arrow-right-from-bracket']" [styles]="{'font-size': '20px','color': 'var(--clr-light-yellow)'}"></fa-icon></button>
             </div>
             
         </ul>
     </nav>
+   
+  
 </section>

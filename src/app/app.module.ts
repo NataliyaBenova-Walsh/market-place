@@ -22,6 +22,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { EditComponent } from './pages/edit/edit.component';
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
-  
+  FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,

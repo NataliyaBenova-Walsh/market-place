@@ -2,16 +2,22 @@
     <div class="register-container">
         <form [formGroup]="regForm" (ngSubmit)="onRegister()" class="register-form">
             <div class="input-container">
-            <label for="firstName">Fisrt name:</label>
+            <label for="firstName">First name:</label>
             <input [class.input-error]="regForm.controls['firstName'].invalid && regForm.controls['firstName'].touched" type="text" formControlName="firstName" id="firstName">
-            <ng-container *ngIf="shouldShowError('firstName')" >
-
+            <p class="check-container" *ngIf=" regForm.controls['firstName'].valid">
+                <fa-icon [icon]="['fas', 'check']"></fa-icon>
+               </p >
+               <ng-container *ngIf="shouldShowError('firstName')" >
                 <p class="error">A first name is required!</p>
             </ng-container>
         </div>
+
         <div class="input-container">
             <label for="lastName">Last name:</label>
             <input [class.input-error]="regForm.controls['lastName'].invalid && regForm.controls['lastName'].touched" type="text" formControlName="lastName" id="lastName">
+            <p class="check-container" *ngIf=" regForm.controls['lastName'].valid">
+                <fa-icon [icon]="['fas', 'check']"></fa-icon>
+               </p >
             <ng-container *ngIf="shouldShowError('lastName')" >
 
                 <p class="error">A last name is required!</p>
@@ -20,7 +26,11 @@
             <div class="input-container">
             <label for="email">Email:</label>
             <input [class.input-error]="regForm.controls['email'].invalid && regForm.controls['email'].touched" type="email" formControlName="email" id="email">
-            <ng-container *ngIf="shouldShowError('email')" >
+            
+            <p class="check-container" *ngIf=" regForm.controls['email'].valid">
+                <fa-icon [icon]="['fas', 'check']"></fa-icon>
+               </p >
+               <ng-container *ngIf="shouldShowError('email')" >
 
                 <p class="error">Valid email is required!</p>
             </ng-container>
@@ -32,6 +42,9 @@
         <div class="input-container">
             <label for="password">Password:</label>
             <input [class.input-error]="regForm.controls['password'].invalid && regForm.controls['password'].touched" type="password" style="-webkit-text-security: square;" formControlName="password" id="password">
+            <p class="check-container" *ngIf=" regForm.controls['password'].valid">
+                <fa-icon [icon]="['fas', 'check']"></fa-icon>
+               </p >
             <ng-container *ngIf="shouldShowError('password')" >
                 <p class="error">Valid password is required!</p>
             </ng-container>
@@ -40,13 +53,13 @@
         <div class="input-container">
             <label for="rePassword">Repeat password:</label>
             <input [class.input-error]="regForm.controls['rePassword'].invalid && regForm.controls['rePassword'].touched" type="password" style="-webkit-text-security: square;" formControlName="rePassword" id="rePassword">
-
+       
             <ng-container *ngIf="shouldShowError('rePassword')" >
 
                 <p class="error">Please enter matching passwords!</p>
             </ng-container>
         </div>
-            <button [disabled]="regForm.invalid" class="btn regBtn" type="submit">Register</button>
+            <button [disabled]="regForm.invalid" [class.hover]="regForm.valid" class="btn regBtn" type="submit">Register</button>
             <p>Already have an account?<a class="regLink" routerLink="/login">Login here</a></p>
         </form>
     </div>

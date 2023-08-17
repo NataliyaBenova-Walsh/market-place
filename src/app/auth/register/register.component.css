@@ -12,7 +12,7 @@
 
 .register-container {
     padding: 24px;
-    background-color: var(--clr-light-yellow);
+    border: 2px solid var(--clr-purple);
    
     color: var(--clr-dark);
     width: 300px;
@@ -26,11 +26,14 @@
     
 }
 input {
-    background-color: transparent;
+    background-color: #ffffff;
     margin-bottom: 12px;
     border: none;
     border-bottom: 1px solid var(--clr-dark);
     padding: 12px;
+}
+input:-webkit-autofill { 
+    -webkit-background-clip: text;
 }
 .regLink {
     direction: none;
@@ -38,6 +41,9 @@ input {
     font-size: 14px;
     font-weight: bold;
     margin-left: 16px;
+}
+.regLink:hover {
+    text-decoration: underline;
 }
 
 .input-error {
@@ -48,4 +54,24 @@ input {
 }
 .regBtn {
     width: 100%;
+    border: 2px solid var(--clr-purple);
+    background-color: var(--clr-purple);
+    color: #f5e0a1;
+    
+}
+.hover:hover {
+    background-color: transparent;
+    color: var(--clr-purple);
+}
+.check-container {
+    position: relative;
+    right: 0;
+}
+ fa-icon {
+    position: relative;
+    top: -54px;
+    left: 280px;
+    color: green;
+     font-size: 12px;
+
 }

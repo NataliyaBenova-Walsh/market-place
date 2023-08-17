@@ -20,7 +20,8 @@ export class ItemDetailsComponent implements OnInit {
    inEditMode: boolean = false;
    isOwnerEmail: boolean = false;
 
-    constructor(private itemSvc: ItemService, private userSvc: UserService, private route: ActivatedRoute, private router: Router) {}
+    constructor(private itemSvc: ItemService, 
+      private userSvc: UserService, private route: ActivatedRoute, private router: Router) {}
 
     ngOnInit(): void {
 

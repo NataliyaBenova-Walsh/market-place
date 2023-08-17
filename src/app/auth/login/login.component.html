@@ -4,6 +4,9 @@
             <div class="input-container">
             <label for="email">Email:</label>
             <input type="text" formControlName="email" id="email">
+            <p class="check-container" *ngIf=" reactiveForm.controls['email'].valid">
+                 <fa-icon [icon]="['fas', 'check']"></fa-icon>
+                </p >
 
             <ng-container *ngIf="!fbError && reactiveForm.controls['email'].touched && reactiveForm.controls['email'].invalid" >
 
@@ -14,6 +17,9 @@
             <div class="input-container">
             <label for="password">Password:</label>
             <input formControlName="password"  type="password" id="password">
+            <p class="check-container" *ngIf=" reactiveForm.controls['email'].valid">
+                <fa-icon [icon]="['fas', 'check']"></fa-icon>
+               </p >
             
             <ng-container *ngIf="!fbError && reactiveForm.controls['password'].touched && reactiveForm.controls['password'].invalid" >
 
