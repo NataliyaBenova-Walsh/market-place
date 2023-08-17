@@ -26,7 +26,7 @@ ngOnInit(): void {
     desc: new FormControl(null, Validators.required),
     price: new FormControl(null, [Validators.required]),
     imgUrl: new FormControl(null),
-   
+    category: new FormControl(null, Validators.required)
   });
 }
 
@@ -40,6 +40,7 @@ ngOnInit(): void {
       price: this.createForm.value.price,
       imgUrl: this.createForm.value.imgUrl,
       desc: this.createForm.value.desc,
+      category: this.createForm.value.category,
       owner: user['uid'],
       ownerEmail: user['email']
 

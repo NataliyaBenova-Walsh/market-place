@@ -33,3 +33,21 @@ span {
 .item-title-span {
     font-size: 18px;
 }
+.filter-form-container {
+    width: 90%;
+    margin: 24px auto;
+    font-size: 14px;
+}
+select {
+    margin: 0 12px;
+    padding: 8px;
+
+
+}
+.filterBtn {
+    margin-left: 12px;
+}
+.filterBtn:hover {
+    background-color: transparent;
+    color: var(--clr-purple);
+}

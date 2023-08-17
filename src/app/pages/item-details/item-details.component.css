@@ -30,14 +30,23 @@
     margin-bottom: 12px;
 }
 .delBtn {
-    background-color: var(--clr-red);
-    border: none;
+    background-color: transparent;
+    border: 2px solid var(--clr-light-yellow);
     cursor: pointer;
+    color: var(--clr-red);
+}
+.delBtn:hover {
+    background-color: var(--clr-light-yellow);
 }
 .editBtn {
-    background-color: var(--clr-light-yellow);
-    border: none;
+    background-color: transparent;
+    border: 2px solid var(--clr-light-yellow);
+    margin-right: 12px;
     cursor: pointer;
+    color: var(--clr-purple);
+}
+.editBtn:hover {
+    background-color: var(--clr-light-yellow);
 }
 .backLink {
     margin: 24px;

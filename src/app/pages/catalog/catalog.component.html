@@ -1,11 +1,16 @@
 <section class="catalog-section">
-<h3>Items for sale:</h3>
-<form #searchItemForm="ngForm">
-    <label for="search">Search:</label>
-        <input ngModel required type="text" class="form-control" id="search" name="search"/>
-    <button (click)="onSearch()">Search</button>  
+<div class="filter-form-container">
+<form [formGroup]="searchItemForm" (submit)="onSearch()">
+    <label for="search">Filter by category:</label>
+        <select required class="form-control" id="search" formControlName="searchCategory">
+            <option value="Furniture">Furniture</option>
+            <option value="Games and toys" >Games and toys</option>
+            <option value="Garden" >Garden</option>
+        </select>
+    <button class="btn filterBtn" [disabled]="searchItemForm.invalid">Filter</button>  
+    <button class="btn filterBtn" (click)="onClearFilter()">Clear filter</button>
 </form>
-
+</div>
 <div class="catalog">
     
     <div class="item-container" *ngFor="let item of items">

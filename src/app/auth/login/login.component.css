@@ -53,13 +53,13 @@ input:-webkit-autofill {
 .error {
     color: #ee3338;
 }
-.check-container {
+.check-login-container {
     position: relative;
     right: 0;
 }
  fa-icon {
     position: relative;
-    top: -40px;
+    top: -48px;
     left: 280px;
     color: green;
      font-size: 12px;

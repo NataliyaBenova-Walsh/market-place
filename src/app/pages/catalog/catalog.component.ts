@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { IItem } from 'src/app/model/item.module';
 import { ItemService } from 'src/app/services/item.service';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-catalog',
@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
-  @ViewChild('searchItemForm') searchItemForm: NgForm;
+  searchItemForm: FormGroup;
   items?: IItem[];
   isFilter: boolean = false;
 
@@ -21,7 +21,10 @@ export class CatalogComponent implements OnInit {
   ngOnInit(): void {
     this.retrieveItems()
     this.isFilter= false;
-    console.log(this.searchItemForm.value);
+    this.searchItemForm = new FormGroup ({
+      searchCategory: new FormControl(null, Validators.required),
+    });
+  
   
   }
  
@@ -40,17 +43,24 @@ export class CatalogComponent implements OnInit {
   }
 
   onSearch(): void {
+    this.isFilter = true;
+    console.log('From search field: ', this.searchItemForm.value);
     const filteredItems = [];
-    const searchF = this.searchItemForm.value.search;
+    const searchF = this.searchItemForm.value.searchCategory;
     console.log(searchF);
         this.items.forEach(item => {
-          const title = item.title
-        if(title.includes(searchF)) {
+          
+        if(item.category==searchF) {
           filteredItems.push(item);
         }
    
       });
       console.log(filteredItems);
+      this.items = filteredItems;
+  }
+  onClearFilter(): void {
+    this.retrieveItems();
+    
   }
  
 }

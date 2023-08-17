@@ -21,10 +21,21 @@
         <label for="price">Price:</label>
         <input type="text" formControlName="price" id="price" ngModel required [class.input-error]='createForm.controls.price.invalid && createForm.controls.price.touched'>
     </div>
+
         
     <ng-container *ngIf="shouldShowError('price')" >
         <p>Please enter an item price</p>
   </ng-container>
+
+<div class="form-group">
+    <label for="category">Category:</label>
+    <select ngModel required formControlName="category" id="category">
+        <option value="Furniture">Furniture</option>
+        <option value="Games and toys">Games and toys</option>
+        <option value="Garden">Garden</option>
+    </select>
+</div>
+
  <div class="form-group">
         <label for="desc">Description</label>
        
