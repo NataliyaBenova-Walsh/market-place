@@ -8,6 +8,7 @@ import { LoginComponent } from "./auth/login/login.component";
 import { AuthGuard } from './shared/guard/auth.guard';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
 import { ProfileComponent } from './auth/profile/profile.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -15,12 +16,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   
   { path: 'catalog', component : CatalogComponent},
-  {path: 'catalog/:id', component: ItemDetailsComponent},
- {path: 'profile', component: ProfileComponent},
-  {path: 'create', component: CreateComponent},
+  {path: 'catalog/:id', component: ItemDetailsComponent, canActivate:[AuthGuard]},
+ {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+  {path: 'create', component: CreateComponent, canActivate:[AuthGuard]},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

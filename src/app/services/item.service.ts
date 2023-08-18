@@ -28,10 +28,12 @@ getOne(id: any) {
   return this.itemsRef.doc(id).valueChanges();
 }
 
-getSearch(any: string) {
+getItemsByOwnerId(id: string) {
   
- 
+    
 }
+
+
   
   create(item: IItem): any {
     return this.itemsRef.add({ ...item });

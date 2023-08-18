@@ -19,6 +19,9 @@ h3 {
     width: 250px;
     border: 2px solid var(--clr-light-purple);
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .btn {
@@ -34,16 +37,29 @@ span {
     font-size: 18px;
 }
 .filter-form-container {
-    width: 90%;
-    margin: 24px auto;
+    background-color: var(--clr-light-yellow);
+    margin: 0 auto;
     font-size: 14px;
+    padding: 24px;
+}
+.sub-form-container {
+    margin: 0 auto;
+    width: 500px;
 }
 select {
-    margin: 0 12px;
+    margin: 4px 12px;
     padding: 8px;
-
-
+    background-color: var(--clr-light-yellow);
 }
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+select option {
+    background-color: transparent;
+    
+}
+
 .filterBtn {
     margin-left: 12px;
 }

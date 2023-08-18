@@ -21,19 +21,22 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
-
+import { ProfileComponent } from './auth/profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
-   
+   ProfileComponent,
     HomeComponent,
     CatalogComponent,
     LoginComponent,
     RegisterComponent,
     ItemDetailsComponent,
+    PageNotFoundComponent,
   
   ],
   imports: [

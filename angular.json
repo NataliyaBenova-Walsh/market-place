@@ -25,8 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/font-awesome/css/font-awesome.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -91,6 +90,13 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "market-place:build:production"
           }
         }
       }

@@ -1,15 +1,24 @@
-<p>profile works!</p>
+
 
 <section class="profile-page">
-   <div class="profile-container">
+   <div class="profile-container" >
         <div class="profile-info">
-            <p>Name: {{currentUser.firstName}} {{currentUser.lastName}}</p>
+            <p>Name: <span class="profile-bold"> {{currentUser.firstName}} {{currentUser.lastName}}</span ></p>
         </div>
         <div class="profile-info">
-            <p>Email: {{currentUser.email}}</p>
+            <p>Email: <span class="profile-bold"> {{currentUser.email}}</span ></p>
         </div>
-        <div class="profile-info">
-            <p>Items for sale:</p>
+        <div class="profile-info user-items">
+            <p><button class="btn" (click)="onForSale()">Items for sale >></button> </p>
+            
+
+            <ng-container *ngIf="currentUserItems.length>0">
+            <div class="items-for-sale" *ngFor="let item of currentUserItems">
+                <div ><a class="item-for-sale-link" [routerLink]="['/catalog', item.id]">{{item.title}} >></a></div>
+            </div>
+            </ng-container>
+            <ng-container *ngIf="currentUserItems.length==0">No items published yet...</ng-container>
+
         </div>
    </div>
 </section>

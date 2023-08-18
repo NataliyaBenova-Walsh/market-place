@@ -3,7 +3,7 @@
 
 :root {
     --clr-yellow: #fbcd43;
-    --clr-light-yellow: #f5e0a1;
+    --clr-light-yellow: #f7e9bf;
     --clr-purple: #3f4096;
     --clr-light-purple: #70719d;
     --clr-red: #ee3338;
@@ -14,7 +14,7 @@ body {
     margin: 0;
 	padding: 0;
 	background: #FFFFFF;
-	font-family: 'Lato', sans-serif;
+	font-family: Helvetica, Arial, sans-serif; 
 	font-size: 13px;
     color: var(--clr-dark);
    
@@ -40,4 +40,12 @@ a {
 }
 .login-page, .register-page, .create-page {
     height: 1000px;
+}
+
+input, textarea, select  {
+    margin-bottom: 12px;
+    padding: 8px;
+}
+select option, textarea {
+    font-family: Helvetica, Arial, sans-serif; 
 }

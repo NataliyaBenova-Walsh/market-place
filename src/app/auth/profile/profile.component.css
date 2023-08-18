@@ -1,0 +1,27 @@
+.profile-page {
+    min-height: 100vh;
+}
+.profile-container {
+    margin: 36px auto;
+    width: 50%;
+    border: 2px solid var(--clr-purple);
+    padding: 36px;
+    box-shadow: 9px 10px 26px -1px rgba(63,64,150,0.75);
+-webkit-box-shadow: 9px 10px 26px -1px rgba(63,64,150,0.75);
+-moz-box-shadow: 9px 10px 26px -1px rgba(63,64,150,0.75);
+}
+.profile-bold {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--clr-purple);
+    margin-left: 12px;
+}
+.items-for-sale {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.item-for-sale-link:hover {
+    text-decoration: underline;
+}

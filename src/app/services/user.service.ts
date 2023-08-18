@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { IUser } from '../model/user.model';
 import * as auth from 'firebase/auth';
+import { map } from 'rxjs'
 
 import 'rxjs'
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
@@ -57,6 +58,7 @@ getCurrentUser(id) {
   return this.usersRef.doc(id).valueChanges();
   
 }
+
 
   
     logout() {

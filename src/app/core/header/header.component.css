@@ -1,29 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  
     padding: 0 24px;
     background-color: var(--clr-purple);
     color: var(--clr-light-yellow);
 }
+nav {
+   
+}
+
 .site-name {
     font-family: 'Architects Daughter', cursive;
     font-weight: bolder;
-    width: 100px;
-    padding: 12px;
+    width: 120px;
+ border: 3px solid var(--clr-light-yellow);
     text-align: center;
+    
 }
 .top-nav-list {
     display: flex;
-    justify-content: flex-end;
-    gap: 24px;
-    margin-right: 24px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
 }
 
 .top-nav-item {
-    padding-left: 12px;
+    padding: 12px;
     list-style: none;
  
 }
@@ -33,18 +36,23 @@ font-size: 18px;
 font-weight: bold;
 }
 
-.user, .guest {
+.nav-right-container {
     display: flex;
-    
+    justify-content: flex-end;
+    align-items: center;
+}
+.nav-left-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #logoutBtn {
     background-color: var(--clr-purple);
     border: none;
     cursor: pointer;
-    margin-left: 24px;
-    font-size: 16px;
+   
 }
 .nav-logo {
-    font-size: 18px;
+    font-size: 20px;
 }

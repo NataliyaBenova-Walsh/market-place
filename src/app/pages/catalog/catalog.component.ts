@@ -1,4 +1,4 @@
-import {  HttpClient } from '@angular/common/http';
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { IItem } from 'src/app/model/item.module';
@@ -15,7 +15,7 @@ export class CatalogComponent implements OnInit {
   items?: IItem[];
   isFilter: boolean = false;
 
-  constructor(private http: HttpClient, public itemSvc: ItemService) {
+  constructor( public itemSvc: ItemService) {
 
   }
   ngOnInit(): void {

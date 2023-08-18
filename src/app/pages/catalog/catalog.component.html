@@ -1,16 +1,19 @@
-<section class="catalog-section">
 <div class="filter-form-container">
-<form [formGroup]="searchItemForm" (submit)="onSearch()">
-    <label for="search">Filter by category:</label>
-        <select required class="form-control" id="search" formControlName="searchCategory">
-            <option value="Furniture">Furniture</option>
-            <option value="Games and toys" >Games and toys</option>
-            <option value="Garden" >Garden</option>
-        </select>
-    <button class="btn filterBtn" [disabled]="searchItemForm.invalid">Filter</button>  
-    <button class="btn filterBtn" (click)="onClearFilter()">Clear filter</button>
-</form>
+    <div class="sub-form-container">
+    <form class="filterForm" [formGroup]="searchItemForm" (submit)="onSearch()">
+        <label for="search">Filter by category:</label>
+            <select required class="form-control" id="search" formControlName="searchCategory">
+                <option value="Furniture">Furniture</option>
+                <option value="Games and toys" >Games and toys</option>
+                <option value="Garden" >Garden</option>
+            </select>
+        <button class="btn filterBtn" [disabled]="searchItemForm.invalid">Filter</button>  
+        <button class="btn filterBtn" (click)="onClearFilter()">Clear filter</button>
+    </form>
+    </div>
 </div>
+<section class="catalog-section">
+
 <div class="catalog">
     
     <div class="item-container" *ngFor="let item of items">
@@ -18,7 +21,7 @@
         <div class="item-img"><img src="{{item.imgUrl}}" alt="image" width="100%" height="200px"></div>
         <div class="item-title"><p>Title: <span class="item-title-span">{{item.title}}</span></p></div>
         <div class="item-price"><p>Price: <span class="item-price-span">{{item.price}}</span></p></div>
-        <div class="item-desc"><p>Description: <span class="item-desc-span">{{item.desc}}</span></p></div>
+        <div class="item-desc"><p>Category: <span class="item-desc-span">{{item.category}}</span></p></div>
         
         <button class="btn" [routerLink]="['/catalog', item.id]">Details</button>
         

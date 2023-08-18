@@ -1,16 +1,29 @@
 <section class="header">
-    <div class="site-name">
-        <p class="nav-logo">My Market Place</p>
-    </div>
+   
     <nav>
         <ul class="top-nav-list">
-            <li class="top-nav-item">
-                <a routerLink="home" class="top-nav-link">Home</a>
-            </li>
+            <div class="nav-left-container">
             <li class="top-nav-item">
                 <a routerLink="catalog" class="top-nav-link">Buy</a>
             </li>
-            <div class="guest" *ngIf="!userService.isLoggedIn">
+            <ng-container *ngIf="userService.isLoggedIn">
+            <li class="top-nav-item">
+                <a routerLink="create" class="top-nav-link">Sell</a>
+            </li>
+            </ng-container>
+        </div>
+        <div class="nav-center">
+            <li class="top-nav-item">
+                <a routerLink="home" class="top-nav-link">
+                    <div class="site-name">
+                        <p class="nav-logo">My Market Place</p>
+                    </div>
+                </a>
+            </li>
+        </div>
+        <div class="nav-right-container">
+          
+            <ng-container *ngIf="!userService.isLoggedIn">
             <li class="top-nav-item">
                 <a routerLink="login" class="top-nav-link">Login</a>
             </li>
@@ -18,17 +31,17 @@
                 <a routerLink="register" class="top-nav-link">Register</a>
             </li>
            
-            </div>
-                <div class="user" *ngIf="userService.isLoggedIn">
-                
+        </ng-container>
+                <ng-container *ngIf="userService.isLoggedIn">
                 
                 <li class="top-nav-item">
-                    <a routerLink="create" class="top-nav-link">Sell</a>
+                    <a routerLink="profile" class="top-nav-link">Profile</a>
                 </li>
-            
+                <li class="top-nav-item">
                 <button id="logoutBtn" class="top-nav-link" (click)="userService.logout()">Logout   <fa-icon [icon]="['fas', 'arrow-right-from-bracket']" [styles]="{'font-size': '20px','color': 'var(--clr-light-yellow)'}"></fa-icon></button>
+                </li>
+             </ng-container>
             </div>
-            
         </ul>
     </nav>
    

@@ -52,6 +52,7 @@ export class ItemDetailsComponent implements OnInit {
         title: this.currentItem.title,
         imgUrl: this.currentItem.imgUrl,
         price: this.currentItem.price,
+        category: this.currentItem.category,
         desc: this.currentItem.desc,
       });
     })

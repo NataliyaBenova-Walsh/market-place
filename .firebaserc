@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-market-place-61759": {
+      "hosting": {
+        "market-place": [
+          "my-market-place-61759"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "my-market-place-61759"
+  }
+}

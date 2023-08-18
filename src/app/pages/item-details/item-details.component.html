@@ -1,6 +1,6 @@
 <section class="item-details">
 
-  <a class="backLink" routerLink="..">Back </a>
+  <a class="backLink" routerLink="..">All items for sale</a>
 
   <div *ngIf="!inEditMode" class="item-details-container">
 
@@ -10,31 +10,34 @@
 <div class="container-right">
     <div class="item-info">
       <div class="item-title">
-        <div class="item-label">Title: <span class="item-field"> {{currentItem.title}}</span></div>
+        <div class="item-label">Title: <span class="item-field item-field-title"> {{currentItem.title}}</span></div>
       </div>
       <div class="item-price">
-        <div class="item-label">Price: <span class="item-field"> {{currentItem.price}}</span></div>
+        <div class="item-label">Price: <span class="item-field item-field-price"> {{currentItem.price}}</span></div>
       </div>
       <div class="item-desc">
-        <div class="item-label">Description: <span class="item-field">{{currentItem.desc}}</span></div>
+        <div class="item-label">Category: <span class="item-field item-field-category">{{currentItem.category}}</span></div>
+      </div>
+      <div class="item-desc">
+        <div class="item-label">Description: <span class="item-field item-field-desc">{{currentItem.desc}}</span></div>
       </div>
     </div>
-    <div class="item-details-btns">
+    <div class="details-btns">
       <ng-container *ngIf="isOwner">
-       
+        <div class="item-details-btns">
         <button class="btn editBtn" (click)="onEdit()" >
           Edit
         </button>
         <button class="btn delBtn" (click)="onDeleteItem()">
           Delete
         </button>
-      
+      </div>
         
   
       </ng-container>
       <ng-container *ngIf="!isOwner">
-        <button *ngIf="!isOwnerEmail" class="btn buyBtn" type="submit" (click)="onBuy()">Owner contact</button>
-      <ng-container *ngIf="isOwnerEmail"><a href="">{{currentItem.ownerEmail}}</a></ng-container>
+        <button *ngIf="!isOwnerEmail" class="contactOwnerBtn" type="submit" (click)="onBuy()">Contact the owner</button>
+      <ng-container *ngIf="isOwnerEmail"><a href="mailto" class="ownerLink">{{currentItem.ownerEmail}}</a></ng-container>
       </ng-container>
   
     </div>
@@ -45,7 +48,7 @@
 </section>
 
   <div class="edit-form" *ngIf="inEditMode">
-    <h4>Details</h4>
+
     <form #editItemForm="ngForm">
       <div class="form-group">
         <label for="title">Title:</label>
@@ -59,9 +62,19 @@
         <label for="price">Price:</label>
         <input ngModel required type="text" class="form-control" id="price" name="price"/>
     </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      
+      <select ngModel required  class="form-control" id="category" name="category">
+        <option value="Furniture">Furniture</option>
+        <option value="Games and toys">Games and toys</option>
+        <option value="Garden">Garden</option>
+        <option value="Other">Other</option>
+      </select>
+  </div>
       <div class="form-group">
         <label for="desc">Description:</label>
-        <input ngModel required  class="form-control" id="desc" name="desc"/>
+        <textarea ngModel required  class="form-control" id="desc" name="desc" cols="30" rows="5"></textarea>
     </div>
 
     <button type="submit" class="btn editBtn" (click)="onUpdateItem()">
