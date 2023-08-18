@@ -34,7 +34,13 @@ span {
 }
 
 .item-title-span {
-    font-size: 18px;
+    font-size: 20px;
+}
+.item-price-span {
+    color: var(--clr-red);
+}
+.item-category-span {
+    color: var(--clr-purple);
 }
 .filter-form-container {
     background-color: var(--clr-light-yellow);

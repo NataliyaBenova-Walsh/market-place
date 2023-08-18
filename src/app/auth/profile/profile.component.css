@@ -25,3 +25,10 @@
 .item-for-sale-link:hover {
     text-decoration: underline;
 }
+.flex-profile-container {
+    display: flex;
+    gap: 24px;
+}
+.profile-img-container {
+    padding-top: 12px;
+}

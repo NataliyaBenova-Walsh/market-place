@@ -12,6 +12,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+      
           "options": {
             "outputPath": "dist/market-place",
             "index": "src/index.html",

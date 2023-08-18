@@ -4,6 +4,9 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { IItem } from 'src/app/model/item.module';
 import { ItemService } from 'src/app/services/item.service';
 import { UserService } from 'src/app/services/user.service';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 
 @Component({
@@ -21,7 +24,11 @@ export class ItemDetailsComponent implements OnInit {
    isOwnerEmail: boolean = false;
 
     constructor(private itemSvc: ItemService, 
-      private userSvc: UserService, private route: ActivatedRoute, private router: Router) {}
+      private userSvc: UserService, private route: ActivatedRoute, private router: Router, library: FaIconLibrary) {
+        library.addIcons(faArrowLeft);
+      }
+     
+     
 
     ngOnInit(): void {
 

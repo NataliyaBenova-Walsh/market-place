@@ -21,19 +21,15 @@
   display: flex;
   flex-direction: column;
 }
-.contactOwnerBtn {
-    cursor: pointer;
-    color: var(--clr-dark);
-    border: none;
-    
-    background-color: transparent;
-    font-size: 16px;
-    padding: 0;
+.buyBtn {
+    margin-left: 12px;
+   
 }
 .ownerLink {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
+    margin-left: 12px;
 }
 
 .item-details-btns {
@@ -64,12 +60,12 @@
 .backLink {
     margin: 24px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 36px;
     font-weight: bold;
 }
 
 .item-field {
-    color: var(--clr-purple);
+   
    margin-bottom: 8px;
     display: block;
     padding-top: 4px;
@@ -78,14 +74,25 @@
 .item-field-title {
     font-size: 18px;
     font-weight: bold;
+    color: var(--clr-dark);
 }
-.item-field-price, .item-field-category {
+.item-field-price {
     font-size: 14px;
     font-weight: bold;
+    color: var(--clr-red);
 }
 .item-label {
     font-size: 12px;
     color: var(--clr-light-purple);
+}
+.item-field-category {
+    color: var(--clr-purple);
+    font-size: 14px;
+    font-weight: bold;
+}
+.item-field-desc {
+    font-size: 14px;
+    color: var(--clr-dark);
 }
 
    

@@ -1,6 +1,6 @@
 <section class="item-details">
 
-  <a class="backLink" routerLink="..">All items for sale</a>
+  <a class="backLink" routerLink=".."> <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon></a>
 
   <div *ngIf="!inEditMode" class="item-details-container">
 
@@ -13,7 +13,7 @@
         <div class="item-label">Title: <span class="item-field item-field-title"> {{currentItem.title}}</span></div>
       </div>
       <div class="item-price">
-        <div class="item-label">Price: <span class="item-field item-field-price"> {{currentItem.price}}</span></div>
+        <div class="item-label">Price: <span class="item-field item-field-price"> {{currentItem.price | currency: 'EUR'}}</span></div>
       </div>
       <div class="item-desc">
         <div class="item-label">Category: <span class="item-field item-field-category">{{currentItem.category}}</span></div>
@@ -36,7 +36,7 @@
   
       </ng-container>
       <ng-container *ngIf="!isOwner">
-        <button *ngIf="!isOwnerEmail" class="contactOwnerBtn" type="submit" (click)="onBuy()">Contact the owner</button>
+        <button *ngIf="!isOwnerEmail" class="btn buyBtn" type="submit" (click)="onBuy()">Contact the owner</button>
       <ng-container *ngIf="isOwnerEmail"><a href="mailto" class="ownerLink">{{currentItem.ownerEmail}}</a></ng-container>
       </ng-container>
   

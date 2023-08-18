@@ -13,7 +13,7 @@ import { IItem } from 'src/app/model/item.module';
 export class ProfileComponent implements OnInit {
    currentUser?: IUser;
     currentUserItems?: IItem[];
-  hasItems: boolean = false;
+ 
   constructor(public userSvc: UserService, public itemSvc: ItemService) {}
   ngOnInit(): void {
     
@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
   }
   onForSale(): void {
     this.retrieveCurrentUserItems();
-    this.hasItems = true;
+    
   }
   retrieveCurrentUserItems(): void {
     
@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
       this.currentUserItems = data;
       console.log('User items', this.currentUserItems);
       if(this.currentUserItems.length>0) {
-        this.hasItems = true;
+       
       }
     });
   }

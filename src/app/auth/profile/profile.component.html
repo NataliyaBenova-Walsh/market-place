@@ -2,6 +2,11 @@
 
 <section class="profile-page">
    <div class="profile-container" >
+    <div class="flex-profile-container">
+    <div class="profile-img-container">
+        <img src="/assets/images/user-avatar.jpg" width="80px" alt="avatar-image">
+    </div>
+    <div class="profile-sub-container">
         <div class="profile-info">
             <p>Name: <span class="profile-bold"> {{currentUser.firstName}} {{currentUser.lastName}}</span ></p>
         </div>
@@ -10,6 +15,11 @@
         </div>
         <div class="profile-info user-items">
             <p><button class="btn" (click)="onForSale()">Items for sale >></button> </p>
+        </div>
+    </div>
+</div>
+    
+       
             
 
             <ng-container *ngIf="currentUserItems.length>0">
@@ -19,6 +29,6 @@
             </ng-container>
             <ng-container *ngIf="currentUserItems.length==0">No items published yet...</ng-container>
 
-        </div>
-   </div>
+    </div>
+
 </section>
