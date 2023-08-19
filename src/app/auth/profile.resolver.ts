@@ -1,12 +1,8 @@
-import { ItemService } from 'src/app/services/item.service';
-import {
-  ActivatedRouteSnapshot,
-  ResolveFn,
-  RouterStateSnapshot,
-} from '@angular/router';
+
+import {ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { Injectable, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+
 import { UserService } from '../services/user.service';
 import { IUser } from '../models/user.model';
 
@@ -17,7 +13,7 @@ interface Resolve<T> {
 
 @Injectable( { providedIn:'root' } )
 
-export class UserResolver implements Resolve<IUser> {
+export class ProfileResolver implements Resolve<IUser> {
   constructor (private userSvc: UserService) {}
 
   resolve(

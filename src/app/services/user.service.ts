@@ -62,7 +62,7 @@ export class UserService {
       .then( ()=> {
         localStorage.removeItem('user');
         console.log('User logged out');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
      });
   }
 

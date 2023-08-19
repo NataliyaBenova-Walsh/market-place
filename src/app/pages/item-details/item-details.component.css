@@ -6,7 +6,7 @@
 .item-details-container {
     border: 2px solid var(--clr-dark);
     width: 50%;
-    margin: 36px auto;
+    margin: 24px auto;
     padding: 36px;
     display: flex;
     justify-content: flex-start;

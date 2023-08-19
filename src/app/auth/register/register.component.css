@@ -1,20 +1,8 @@
-:root {
-    --clr-yellow: #fbcd43;
-    --clr-light-yellow: #f5e0a1;
-    --clr-purple: #3f4096;
-    --clr-light-purple: #70719d;
-    --clr-red: #ee3338;
-    --clr-dark: #1e1f3d;
-
-}
-
 
 
 .register-container {
     padding: 24px;
     border: 2px solid var(--clr-purple);
-    
-   
     color: var(--clr-dark);
     width: 300px;
     margin: 24px auto;

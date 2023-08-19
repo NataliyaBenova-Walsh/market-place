@@ -13,8 +13,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CoreModule } from './core/core.module';
 
-
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -32,11 +30,11 @@ import { AuthGuard } from './shared/guard/auth.guard';
     CreateComponent,
    ProfileComponent,
     HomeComponent,
-    CatalogComponent,
     LoginComponent,
     RegisterComponent,
-    ItemDetailsComponent,
     PageNotFoundComponent,
+    ItemDetailsComponent,
+    CatalogComponent
   
   ],
   imports: [

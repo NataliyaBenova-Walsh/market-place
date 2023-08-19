@@ -40,7 +40,7 @@ a {
     border-radius: 2px;
 }
 .login-page, .register-page, .create-page {
-    height: 1000px;
+    height: 600px;
 }
 
 input, textarea, select  {
