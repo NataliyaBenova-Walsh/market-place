@@ -7,6 +7,7 @@ import { map } from 'rxjs'
 
 import 'rxjs'
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
+import { query } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -54,11 +55,6 @@ export class UserService {
 
   }
   
-getCurrentUser(id) {
-  return this.usersRef.doc(id).valueChanges();
-  
-}
-
 
   
     logout() {

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.itemSvc.getFew().subscribe(data => {
+    this.itemSvc.getAll().subscribe(data => {
       this.itemsSample = data.slice(0,4);
       console.log(this.itemsSample)
       

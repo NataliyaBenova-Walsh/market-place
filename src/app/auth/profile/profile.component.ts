@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/models/user.model';
 import { ItemService } from 'src/app/services/item.service';
 import { UserService } from 'src/app/services/user.service';
-import { map } from 'rxjs'
+
 import { IItem } from 'src/app/models/item.model';
 
 @Component({
@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
     
     const user = JSON.parse(localStorage.getItem('user'));
     console.log('UserID: ',user.uid);
-    const data = this.userSvc.getCurrentUser(user.uid)
+    const data = this.userSvc.getUser(user.uid)
     .subscribe(user => {
       this.currentUser = user;
       console.log(this.currentUser);

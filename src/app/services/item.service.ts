@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { IItem } from '../models/item.model';
 import {map} from 'rxjs';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
 
 @Injectable({
@@ -44,16 +44,5 @@ getOne(id: any) {
     return this.itemsRef.doc(id).delete();
   }
 
-  getFew(): any {
-    return this.itemsRef.snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      
-      )
-    )
-
-    }
   
 }

@@ -3,7 +3,7 @@
         <form class="login-form"  [formGroup]="reactiveForm" (ngSubmit)="onLogin()">
             <div class="input-container">
             <label for="email">Email:</label>
-            <input type="text" formControlName="email" id="email">
+            <input [class.input-error]="reactiveForm.controls['email'].invalid && reactiveForm.controls['email'].touched" type="text" formControlName="email" id="email">
             <p class="check-login-container" *ngIf=" reactiveForm.controls['email'].valid">
                  <fa-icon [icon]="['fas', 'check']"></fa-icon>
                 </p >
@@ -16,7 +16,8 @@
 
             <div class="input-container">
             <label for="password">Password:</label>
-            <input formControlName="password"  type="password" id="password">
+            <input [class.input-error]="reactiveForm.controls['password'].invalid && reactiveForm.controls['password'].touched"
+             formControlName="password"  type="password" id="password">
         
             
             <ng-container *ngIf="!fbError && reactiveForm.controls['password'].touched && reactiveForm.controls['password'].invalid" >
