@@ -8,7 +8,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
-import { IUser } from '../model/user.model';
+import { IUser } from '../models/user.model';
 
 
 interface Resolve<T> {

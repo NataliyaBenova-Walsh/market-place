@@ -1,7 +1,7 @@
 import {  HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
-import { IItem } from 'src/app/model/item.module';
+import { IItem } from 'src/app/models/item.model';
 import { ItemService } from 'src/app/services/item.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';

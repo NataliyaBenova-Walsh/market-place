@@ -2,10 +2,12 @@
 
   <a class="backLink" routerLink=".."> <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon></a>
 
+
+
   <div *ngIf="!inEditMode" class="item-details-container">
 
     <div class="item-img">
-      <img src="{{currentItem.imgUrl}}" height="250px">
+      <img src="{{currentItem.imgUrl}}" height="250px" width="250px" >
     </div>
 <div class="container-right">
     <div class="item-info">
@@ -32,7 +34,7 @@
           Delete
         </button>
       </div>
-        
+
   
       </ng-container>
       <ng-container *ngIf="!isOwner">
@@ -60,7 +62,7 @@
     </div>
     <div class="form-group">
         <label for="price">Price:</label>
-        <input ngModel required type="text" class="form-control" id="price" name="price"/>
+        <input ngModel required type="number" class="form-control" id="price" name="price"/>
     </div>
     <div class="form-group">
       <label for="category">Category:</label>

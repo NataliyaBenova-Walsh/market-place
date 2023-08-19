@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { IUser } from 'src/app/model/user.model';
+import { IUser } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import 'rxjs'
 import { AngularFirestore, AngularFirestoreDocument, } from '@angular/fire/compat/firestore';
@@ -66,8 +66,8 @@ export class RegisterComponent implements OnInit {
     this.fireBaseAuth.authState.subscribe((user) => {
       if(user) {
         console.log(user);
-        this.router.navigate(['/home']);
-        alert('Success!');
+        this.router.navigate(['/catalog']);
+       
         this.regForm.reset();
       }
     });

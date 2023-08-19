@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { IUser } from '../../model/user.model';
+import { IUser } from '../../models/user.model';
 import 'rxjs'
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 

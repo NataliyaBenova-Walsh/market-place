@@ -16,19 +16,19 @@
         <div class="profile-info user-items">
             <p><button class="btn" (click)="onForSale()">Items for sale >></button> </p>
         </div>
-    </div>
-</div>
-    
-       
-            
-
-            <ng-container *ngIf="currentUserItems.length>0">
+        <ng-container *ngIf="hasItems">
             <div class="items-for-sale" *ngFor="let item of currentUserItems">
                 <div ><a class="item-for-sale-link" [routerLink]="['/catalog', item.id]">{{item.title}} >></a></div>
             </div>
             </ng-container>
-            <ng-container *ngIf="currentUserItems.length==0">No items published yet...</ng-container>
+            <ng-container *ngIf="!hasItems"><p class="no-items">No items published yet...</p></ng-container>
 
+    </div>
+</div>
+    
+       
+
+           
     </div>
 
 </section>

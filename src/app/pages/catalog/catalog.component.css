@@ -4,8 +4,9 @@ h3 {
 .catalog{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 90%;
+    justify-content: flex-start;
+    gap: 14px;
+    width: 85%;
     margin: 36px auto;
    
 }
@@ -63,6 +64,7 @@ label {
 }
 select option {
     background-color: transparent;
+    
     
 }
 

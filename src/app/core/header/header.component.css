@@ -51,6 +51,7 @@ font-weight: bold;
     background-color: var(--clr-purple);
     border: none;
     cursor: pointer;
+    text-transform: uppercase;
    
 }
 .nav-logo {

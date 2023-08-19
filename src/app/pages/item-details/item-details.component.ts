@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { IItem } from 'src/app/model/item.module';
+import { IItem } from 'src/app/models/item.model';
 import { ItemService } from 'src/app/services/item.service';
 import { UserService } from 'src/app/services/user.service';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -93,13 +93,16 @@ export class ItemDetailsComponent implements OnInit {
 
     onDeleteItem(): void {
       if(this.currentItem.id) {
-        this.itemSvc.delete(this.currentItem.id)
-        .then (()=> {
-          this.refreshList.emit();
-          console.log('Item deleted!');
-          this.router.navigate(['/catalog']);
-        })
-        .catch(err => console.log(err));
+        if(confirm(`Are you sure you want to delete ${this.currentItem.title}?`)) {
+          this.itemSvc.delete(this.currentItem.id)
+          .then (()=> {
+            this.refreshList.emit();
+            console.log('Item deleted!');
+            this.router.navigate(['/catalog']);
+          })
+          .catch(err => console.log(err));
+        }
+       
       }
     }
     

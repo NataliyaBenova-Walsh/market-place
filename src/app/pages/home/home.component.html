@@ -7,11 +7,18 @@
             
                 <h2 class="home-info-title">Toys and games, furnitures, garden tools and so much more!</h2>
                
-            
-      
-        
             <div class="home-info-subcontainer">
                 <a class=" catalog-link" routerLink="/catalog">Items for sale >></a>
+            <div class="home-items-container">
+                <div *ngFor="let item of itemsSample">
+                  
+                        <button class="imgBtn" [routerLink]="['/catalog', item.id]">
+                            <img src="{{item.imgUrl}}" class="home-item-container-img" width="70px" height="70px">
+                        </button>
+                        
+                  
+                </div>
+            </div>
                 <p>Ready to start buying and selling? <a class="home-info-link" routerLink="/register">Register >></a></p>
                 <p>Already have an account? <a class="home-info-link" routerLink="/login">Login >></a></p>
             </div>

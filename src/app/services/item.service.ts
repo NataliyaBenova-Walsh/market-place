@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
-import { IItem } from '../model/item.module';
-import { Observable} from 'rxjs'
-import { map } from 'rxjs';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, QuerySnapshot } from '@angular/fire/compat/firestore';
+import { IItem } from '../models/item.model';
+import {map} from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 
 
 @Injectable({
@@ -19,22 +18,20 @@ export class ItemService {
     this.itemsRef = afs.collection(this.dbPath);
   }
 
-  getAll(): AngularFirestoreCollection<IItem> {
-    
-    return this.itemsRef;
+  getAll(): any {
+    return this.itemsRef.snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    )
+;
   }
 getOne(id: any) {
-
-  return this.itemsRef.doc(id).valueChanges();
+    return this.itemsRef.doc(id).valueChanges();
 }
 
-getItemsByOwnerId(id: string) {
-  
-    
-}
-
-
-  
   create(item: IItem): any {
     return this.itemsRef.add({ ...item });
   }
@@ -46,8 +43,17 @@ getItemsByOwnerId(id: string) {
   delete(id: string): Promise<void> {
     return this.itemsRef.doc(id).delete();
   }
- 
 
+  getFew(): any {
+    return this.itemsRef.snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      
+      )
+    )
 
+    }
   
 }

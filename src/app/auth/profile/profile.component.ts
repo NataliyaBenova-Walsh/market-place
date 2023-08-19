@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from 'src/app/model/user.model';
+import { IUser } from 'src/app/models/user.model';
 import { ItemService } from 'src/app/services/item.service';
 import { UserService } from 'src/app/services/user.service';
 import { map } from 'rxjs'
-import { IItem } from 'src/app/model/item.module';
+import { IItem } from 'src/app/models/item.model';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +13,7 @@ import { IItem } from 'src/app/model/item.module';
 export class ProfileComponent implements OnInit {
    currentUser?: IUser;
     currentUserItems?: IItem[];
+    hasItems: boolean = true;
  
   constructor(public userSvc: UserService, public itemSvc: ItemService) {}
   ngOnInit(): void {
@@ -26,26 +27,22 @@ export class ProfileComponent implements OnInit {
   });
 
   
- 
-
   }
+
+
   onForSale(): void {
     this.retrieveCurrentUserItems();
     
   }
+
   retrieveCurrentUserItems(): void {
     
-    this.itemSvc.getAll().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-        ).filter(i => i.owner==this.currentUser.uid))
-        ).subscribe(data => {
-      this.currentUserItems = data;
+    this.itemSvc.getAll()
+    
+        .subscribe(data => {
+      this.currentUserItems = data.filter( i => i.owner==this.currentUser.uid);
       console.log('User items', this.currentUserItems);
-      if(this.currentUserItems.length>0) {
-       
-      }
+          this.currentUserItems.length==0 ? this.hasItems=false : this.hasItems = true;
     });
   }
     
