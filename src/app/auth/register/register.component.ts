@@ -58,14 +58,14 @@ export class RegisterComponent implements OnInit {
       password: this.regForm.value.password,
 
     }
-    console.log(body);
+  
     this.userSvc.signUp(body.email, body.password)   
    .then((res)=> {
     
     this.SetUserData(res.user);
     this.fireBaseAuth.authState.subscribe((user) => {
       if(user) {
-        console.log(user);
+       
         this.router.navigate(['/catalog']);
        
         this.regForm.reset();

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   reactiveForm: FormGroup;
   fbError: boolean = false;
 
-  constructor(public userSvc: UserService, private router: Router,  private afs: AngularFirestore,
+  constructor(public userSvc: UserService, private router: Router, 
     private fireBaseAuth: AngularFireAuth,) {
       this.fireBaseAuth.authState.subscribe((user)=> {
         if(user) {
